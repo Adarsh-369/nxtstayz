@@ -23,9 +23,9 @@ public class RoomController {
         return roomJpaService.getRoomById(roomId);
     }
 
-    @PostMapping("/hotels/rooms/{roomId}")
-    public Room updateRoom(@PathVariable("roomId") int roomId, @RequestBody Room room) {
-        return roomJpaService.updateRoom(roomId, room);
+    @PostMapping("/hotels/rooms")
+    public Room addRoom(@RequestBody Room room) {
+        return roomJpaService.addRoom(room);
     }
 
     @PutMapping("/hotels/rooms")

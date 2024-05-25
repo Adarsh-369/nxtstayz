@@ -77,9 +77,9 @@ public class RoomJpaService implements RoomRepository {
         try {
             roomJpaRepository.deleteById(roomId);
         } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT);
         }
-        throw new ResponsestatusException(HttpStatus.NO_CONTENT);
+        throw new ResponseStatusException(HttpStatus.NO_CONTENT);
     }
 
     public Hotel getRoomHotel(int roomId) {

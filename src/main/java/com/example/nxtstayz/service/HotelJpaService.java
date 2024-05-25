@@ -49,8 +49,8 @@ public class HotelJpaService implements HotelRepository {
             if (hotel.getLocation() != null) {
                 newHotel.setLocation(hotel.getLocation());
             }
-            if (hotel.getRacing() != 0) {
-                newHotel.setRating(hotel.getRacing());
+            if (hotel.getRating() != 0) {
+                newHotel.setRating(hotel.getRating());
             }
             hotelJpaRepository.save(newHotel);
             return newHotel;
@@ -64,7 +64,7 @@ public class HotelJpaService implements HotelRepository {
         try {
             hotelJpaRepository.deleteById(hotelId);
         } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new ResponseStatusException(HttpStatus.N0_CONTENT);
         }
         throw new ResponseStatusException(HttpStatus.N0_CONTENT);
     }
