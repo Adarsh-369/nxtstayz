@@ -34,6 +34,16 @@ public class HotelJpaService implements HotelRepository {
     }
 
     @Override
+    public List<Room> getHotelRooms(int hotelId) {
+        try {
+            Hotel hotel = hotelJpaRepository.findById(hotelId).get();
+            return roomJpaRepository.findByHotel(hotel);
+        }catch (Exception e){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @Override
     public Hotel addHotel(Hotel hotel) {
         hotelJpaRepository.save(hotel);
         return hotel;
@@ -64,8 +74,8 @@ public class HotelJpaService implements HotelRepository {
         try {
             hotelJpaRepository.deleteById(hotelId);
         } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.N0_CONTENT);
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT);
         }
-        throw new ResponseStatusException(HttpStatus.N0_CONTENT);
+        throw new ResponseStatusException(HttpStatus.NO_CONTENT);
     }
 }

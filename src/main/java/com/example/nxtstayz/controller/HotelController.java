@@ -23,6 +23,11 @@ public class HotelController {
         return hotelJpaService.getHotelById(hotelId);
     }
 
+    @GetMapping("/hotels/{hotelId}/rooms")
+    public List<Room> getHotelRooms(@PathVariable("hotelId") int hotelId) {
+        return hotelJpaService.getHotelRooms(hotelId);
+    }
+
     @PostMapping("/hotels")
     public Hotel addHotel(@RequestBody Hotel hotel) {
         return hotelJpaService.addHotel(hotel);
