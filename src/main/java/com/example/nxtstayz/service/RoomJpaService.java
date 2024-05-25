@@ -16,8 +16,8 @@ import java.util.List;
 
 @Service
 public class RoomJpaService implements RoomRepository {
-    @Autowired 
-    private RoomJpaRepository  roomJpaRepository;
+    @Autowired
+    private RoomJpaRepository roomJpaRepository;
 
     @Autowired
     private HotelJpaRepository hotelJpaRepository;

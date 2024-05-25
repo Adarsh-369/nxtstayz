@@ -10,7 +10,7 @@ public class Room {
     @Column(name = "id")
     private int roomId;
     @Column(name = "roomnumber")
-    private String romNumber;
+    private String roomNumber;
     @Column(name = "type")
     private String type;
     @Column(name = "price")

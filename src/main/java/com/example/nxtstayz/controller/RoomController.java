@@ -4,7 +4,7 @@ import com.example.nxtstayz.model.Room;
 import com.example.nxtstayz.model.Hotel;
 import com.example.nxtstayz.service.RoomJpaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.webbind.annotation.*;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -28,7 +28,7 @@ public class RoomController {
         return roomJpaService.updateRoom(roomId, room);
     }
 
-    @PutMapping("/hotels/rooms/{roomId}")
+    @PutMapping("/hotels/rooms")
     public Room updateRoom(@PathVariable("roomId") int roomId, @RequestBody Room room) {
         return roomJpaService.updateRoom(roomId, room);
     }
